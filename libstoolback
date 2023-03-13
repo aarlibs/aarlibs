@@ -585,7 +585,7 @@ winform.button2.oncommand = function(id, event) {
     }
     winform.button2.disabled = false;
 }
-winform.static2.text = string.concat("启动次数：", getCount("total", , 1)
+winform.static2.text = string.concat("启动次数：", getCount("total", , 1))
 
 winform.combobox.onListChange = function() {
     lnk.res=downtab[winform.combobox.selText]
