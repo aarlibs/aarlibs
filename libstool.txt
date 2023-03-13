@@ -22,16 +22,15 @@ static2={cls="static";left=149;top=12;right=288;bottom=36;transparent=1;z=9}
 import inet.http;
 import win.ui.atom;
 import ide;
-import console;
-var giteeurl = "https://gitee.com/yang_lite/aardio-extension-library/raw/main/" //gitee服务器
-var priurl = "https://aarlib.52hy.top/aardio-extension-library/" //自己服务器
+//import console;
 
-//https://gitee.com/yang_lite/aardio-extension-library/raw/main/lzma/dll.dm.tar.lzma
-
+downtab={
+	默认 ="https://aardio.gogu.top/";
+	Gitee下载 = "https://gitee.com/yang_lite/aardio-extension-library/raw/main/"; //gitee服务器
+    备用服务器下载 = "https://aarlib.52hy.top/aardio-extension-library/"; //自己服务器
+}
 lnk = {
-    list = "https://gitee.com/yang_lite/aardio-extension-library/raw/main/list";
-    //list = "https://aardio_lib.52hy.top/list.php";
-    res = giteeurl
+    list = "https://aardio.gogu.top/list";
 }
 var atom, hwnd = winform.atom("aardio.extlib.54AE3DC1-DC89-439C-8BFC-52576EA86CB8");
 if (!atom) {
@@ -52,11 +51,12 @@ getCount = function(key, n, g) {
 }
 
 winform.combobox.items = {
+	"默认";
     "Gitee下载";
     "备用服务器下载"
 }
 winform.combobox.selIndex = 1;
-
+lnk.res=downtab[winform.combobox.selText]
 
 winform.enableDpiScaling();
 
@@ -116,7 +116,6 @@ showLibs = function(libs) {
     if (libs) {
         var installedLibs = ide.getExtLibs();
         for libName, libInfo in table.eachName(libs) {
-            //console.dump()
             var row = winform.listview.addItem({
                 libName;
                 libInfo.version;
@@ -241,7 +240,7 @@ winform.btnSetup.oncommand = function(id, event) {
                                         var bin = inet.http().get(downloadUrl);
                                         if (bin) {
                                             var libPath, libDir = ..io.libpath(libName)
-                                            console.dump(libPaht, libDir)
+                                            //console.dump(libPaht, libDir)
                                             if (!libPath) libPath = ..io.joinpath(libDir, "_.aardio");
                                             ..string.save(libPath, bin)
                                         }
@@ -585,17 +584,10 @@ winform.button2.oncommand = function(id, event) {
     }
     winform.button2.disabled = false;
 }
-winform.static2.text = string.concat("启动次数：", getCount("total", , 1))
-
+winform.static2.text = string.concat("启动次数：", getCount("total", , 1)
 
 winform.combobox.onListChange = function() {
-    var index = winform.combobox.selIndex;
-    if (index = 2) {
-        lnk.res = priurl
-    }
-    else {
-        lnk.res = giteeurl
-    }
+    lnk.res=downtab[winform.combobox.selText]
 }
 
 winform.editKeyword.setFocus();
