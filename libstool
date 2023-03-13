@@ -30,7 +30,8 @@ downtab={
     备用服务器下载 = "https://aarlib.52hy.top/aardio-extension-library/"; //自己服务器
 }
 lnk = {
-    list = "https://aardio.gogu.top/list";
+    list ="https://gitee.com/yang_lite/aardio-extension-library/raw/main/list";//引用
+    //list = "https://aardio.gogu.top/list"; 
 }
 var atom, hwnd = winform.atom("aardio.extlib.54AE3DC1-DC89-439C-8BFC-52576EA86CB8");
 if (!atom) {
