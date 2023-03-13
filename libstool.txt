@@ -1,19 +1,19 @@
-//À©Õ¹¿â(ÊÕ¼¯°æ v6.0)
-// Ğ¡·ÊÑòĞŞ¸Ä°æ£¬²Ö¿âÊ¹ÓÃµÄÊÇgitee£¬µ«ÊÇÃ²ËÆÓĞĞ©ÏŞÖÆ»áµ¼ÖÂÏÂÔØÊ§°Ü£¡Ìí¼ÓÁË±¸ÓÃ·şÎñÆ÷µØÖ·
-//·çĞĞÕßÔÙ´ÎĞŞ¸Ä6.0
+//æ‰©å±•åº“(æ”¶é›†ç‰ˆ v6.0)
+// å°è‚¥ç¾Šä¿®æ”¹ç‰ˆï¼Œä»“åº“ä½¿ç”¨çš„æ˜¯giteeï¼Œä½†æ˜¯è²Œä¼¼æœ‰äº›é™åˆ¶ä¼šå¯¼è‡´ä¸‹è½½å¤±è´¥ï¼æ·»åŠ äº†å¤‡ç”¨æœåŠ¡å™¨åœ°å€
+//é£è¡Œè€…å†æ¬¡ä¿®æ”¹6.0
 import win.ui;
 /*DSG{{*/
-var winform = win.form(text="aardioÀ©Õ¹¿â£¨ÊÕ¼¯°æ)";right=862;bottom=517)
+var winform = win.form(text="aardioæ‰©å±•åº“ï¼ˆæ”¶é›†ç‰ˆ)";right=862;bottom=517)
 winform.add(
-btnDeselectAll={cls="button";text="È¡ÏûÈ«Ñ¡";left=631;top=486;right=710;bottom=515;db=1;dr=1;z=3};
-btnSearch={cls="button";text="ËÑË÷À©Õ¹¿â";left=733;top=5;right=851;bottom=35;dr=1;dt=1;z=7};
-btnSelectAll={cls="button";text="È«Ñ¡";left=530;top=486;right=609;bottom=515;db=1;dr=1;z=2};
-btnSetup={cls="button";text="°²×°/¸üĞÂ";left=732;top=486;right=846;bottom=515;db=1;dr=1;z=4};
-button2={cls="button";text="¼ÓÔØÊ¹ÓÃÁ¿(½ÏÂı)";left=10;top=5;right=136;bottom=36;z=10};
+btnDeselectAll={cls="button";text="å–æ¶ˆå…¨é€‰";left=631;top=486;right=710;bottom=515;db=1;dr=1;z=3};
+btnSearch={cls="button";text="æœç´¢æ‰©å±•åº“";left=733;top=5;right=851;bottom=35;dr=1;dt=1;z=7};
+btnSelectAll={cls="button";text="å…¨é€‰";left=530;top=486;right=609;bottom=515;db=1;dr=1;z=2};
+btnSetup={cls="button";text="å®‰è£…/æ›´æ–°";left=732;top=486;right=846;bottom=515;db=1;dr=1;z=4};
+button2={cls="button";text="åŠ è½½ä½¿ç”¨é‡(è¾ƒæ…¢)";left=10;top=5;right=136;bottom=36;z=10};
 combobox={cls="combobox";left=22;top=490;right=144;bottom=510;edge=1;items={};mode="dropdown";z=11};
 editKeyword={cls="edit";left=506;top=5;right=723;bottom=35;dr=1;dt=1;edge=1;z=6};
-lbInfo={cls="static";text="Êó±êË«»÷ÉÏÃæµÄÀ©Õ¹¿âÏîÄ¿´ò¿ªÏà¹Ø·¶Àı";left=160;top=490;right=483;bottom=510;center=1;db=1;dl=1;dr=1;transparent=1;z=5};
-lbKeyword={cls="static";text="¿âÃû³Æ»ò¿â¹¦ÄÜÓĞ¹ØµÄ¹Ø¼ü´Ê£º";left=285;top=12;right=498;bottom=34;align="right";dr=1;dt=1;transparent=1;z=8};
+lbInfo={cls="static";text="é¼ æ ‡åŒå‡»ä¸Šé¢çš„æ‰©å±•åº“é¡¹ç›®æ‰“å¼€ç›¸å…³èŒƒä¾‹";left=160;top=490;right=483;bottom=510;center=1;db=1;dl=1;dr=1;transparent=1;z=5};
+lbKeyword={cls="static";text="åº“åç§°æˆ–åº“åŠŸèƒ½æœ‰å…³çš„å…³é”®è¯ï¼š";left=285;top=12;right=498;bottom=34;align="right";dr=1;dt=1;transparent=1;z=8};
 listview={cls="listview";left=11;top=41;right=852;bottom=484;bgcolor=16777215;db=1;dl=1;dr=1;dt=1;edge=1;fullRow=1;z=1};
 static2={cls="static";left=149;top=12;right=288;bottom=36;transparent=1;z=9}
 )
@@ -23,8 +23,8 @@ import inet.http;
 import win.ui.atom;
 import ide;
 import console;
-var giteeurl = "https://gitee.com/yang_lite/aardio-extension-library/raw/main/" //gitee·şÎñÆ÷
-var priurl = "https://aarlib.52hy.top/aardio-extension-library/" //×Ô¼º·şÎñÆ÷
+var giteeurl = "https://gitee.com/yang_lite/aardio-extension-library/raw/main/" //giteeæœåŠ¡å™¨
+var priurl = "https://aarlib.52hy.top/aardio-extension-library/" //è‡ªå·±æœåŠ¡å™¨
 
 //https://gitee.com/yang_lite/aardio-extension-library/raw/main/lzma/dll.dm.tar.lzma
 
@@ -52,36 +52,36 @@ getCount = function(key, n, g) {
 }
 
 winform.combobox.items = {
-    "GiteeÏÂÔØ";
-    "±¸ÓÃ·şÎñÆ÷ÏÂÔØ"
+    "Giteeä¸‹è½½";
+    "å¤‡ç”¨æœåŠ¡å™¨ä¸‹è½½"
 }
 winform.combobox.selIndex = 1;
 
 
 winform.enableDpiScaling();
 
-// ³õÊ¼»¯ imagelist
+// åˆå§‹åŒ– imagelist
 import win.imageList;
 var iml = win.imageList(16, 15);
 iml.add('GIF\56\57a \0\15\0\x80\0\0\x80\x80\x80\xff\0\xff\33\xf9\4\0\0\0\0\0\44\0\0\0\0 \0\15\0\0\2\31\x8c\x8f\xa9\xcb\xed\15\xa3\x9c\xb4N\xf0\x80\xde\56k\xbfA\\\xd7\x84 \x97Y\xea\xca\xb6\xee\11\xc7F\1\0;', 0xff00ff);
 winform.listview.setColumnImageList(iml);
 
 winform.listview.setExtended(0x4 /*_LVS_EX_CHECKBOXES*/ )
-winform.listview.insertColumn("À©Õ¹¿â", 135)
-winform.listview.insertColumn("°æ±¾", 50)
-winform.listview.insertColumn("±¾µØ°æ±¾", 65)
-winform.listview.insertColumn("×÷Õß", 60)
-winform.listview.insertColumn("ËµÃ÷", 400)
-winform.listview.insertColumn("°²×°Á¿", 55)
-winform.listview.insertColumn("·¶Àı", 55)
-//winform.listview.insertColumn("¹¤¾ß",50)
+winform.listview.insertColumn("æ‰©å±•åº“", 135)
+winform.listview.insertColumn("ç‰ˆæœ¬", 50)
+winform.listview.insertColumn("æœ¬åœ°ç‰ˆæœ¬", 65)
+winform.listview.insertColumn("ä½œè€…", 60)
+winform.listview.insertColumn("è¯´æ˜", 400)
+winform.listview.insertColumn("å®‰è£…é‡", 55)
+winform.listview.insertColumn("èŒƒä¾‹", 55)
+//winform.listview.insertColumn("å·¥å…·",50)
 
-// ÅÅĞòº¯Êı
+// æ’åºå‡½æ•°
 winform.listview.sortBy = function(ind) {
     var image = winform.listview.getColumnImage(ind);
-    // ÒÑ°´ÕÕÉıĞòÅÅĞò£¬Ôò°´ÕÕ½µĞòÅÅĞò£»ÆäÓàÇé¿ö°´ÕÕÉıĞòÅÅĞò
+    // å·²æŒ‰ç…§å‡åºæ’åºï¼Œåˆ™æŒ‰ç…§é™åºæ’åºï¼›å…¶ä½™æƒ…å†µæŒ‰ç…§å‡åºæ’åº
     var desc = image == 0;
-    // Ã°ÅİÅÅĞò£¬´ó¼ÒÒ²¿É²ÉÓÃÆäËûÅÅĞò·½Ê½
+    // å†’æ³¡æ’åºï¼Œå¤§å®¶ä¹Ÿå¯é‡‡ç”¨å…¶ä»–æ’åºæ–¹å¼
     var i, j, k;
     var num = winform.listview.count;
     var strCurrect, strLast, strTemp;
@@ -90,7 +90,7 @@ winform.listview.sortBy = function(ind) {
             strCurrect = winform.listview.getItemText(i, ind);
             strLast = winform.listview.getItemText(i - 1, ind);
             if (strCurrect < strLast && !desc || strCurrect > strLast && desc) {
-                // ½»»»Á½ĞĞµÄÎ»ÖÃ
+                // äº¤æ¢ä¸¤è¡Œçš„ä½ç½®
                 for (k = 1; 7) {
                     strTemp = winform.listview.getItemText(i, k);
                     strCh = winform.listview.getChecked(i)
@@ -102,13 +102,13 @@ winform.listview.sortBy = function(ind) {
             }
         }
     }
-    // ¸üĞÂÁĞÍ¼±ê
+    // æ›´æ–°åˆ—å›¾æ ‡
     winform.listview.clearColumnImage()
     winform.listview.setColumnImage(ind, desc ? 1 : 0);
 }
 
 winform.show()
-winform.text = "aardioÀ©Õ¹¿â°²×°³ÌĞò ÕıÔÚ»ñÈ¡·şÎñÆ÷ÁĞ±í...."
+winform.text = "aardioæ‰©å±•åº“å®‰è£…ç¨‹åº æ­£åœ¨è·å–æœåŠ¡å™¨åˆ—è¡¨...."
 
 showLibs = function(libs) {
     winform.listview.clear();
@@ -120,19 +120,19 @@ showLibs = function(libs) {
             var row = winform.listview.addItem({
                 libName;
                 libInfo.version;
-                installedLibs[libName][["version"]]: "Î´°²×°";
+                installedLibs[libName][["version"]]: "æœªå®‰è£…";
                 libInfo.author;
                 libInfo.description;
-                "Î´¼ÓÔØ";
-                (libInfo.codeUrl: libInfo.zipUrl) ? "ÓĞ";
-                (libInfo.istool) ? "ÊÇ" : "·ñ";
+                "æœªåŠ è½½";
+                (libInfo.codeUrl: libInfo.zipUrl) ? "æœ‰";
+                (libInfo.istool) ? "æ˜¯" : "å¦";
             })
             if (installedLibs[libName][["version"]])
                 winform.listview.setChecked(row, true)
         }
     }
     else {
-        winform.text = "aardioÀ©Õ¹¿â£¨ÊÕ¼¯°æ£©°²×°³ÌĞò - " + (err: "Îª±ÜÃâÀÄÓÃÃâ·Ñ×ÊÔ´£¬ÇëÉÔºóÔÙÊÔ")
+        winform.text = "aardioæ‰©å±•åº“ï¼ˆæ”¶é›†ç‰ˆï¼‰å®‰è£…ç¨‹åº - " + (err: "ä¸ºé¿å…æ»¥ç”¨å…è´¹èµ„æºï¼Œè¯·ç¨åå†è¯•")
         return;
     }
 }
@@ -142,7 +142,7 @@ http.disableCache()
 var libs = eval(http.get(lnk.list): "");
 showLibs(libs);
 
-winform.text = "aardioÀ©Õ¹¿â£¨ÊÕ¼¯°æ£© - ÒÑ»ñÈ¡·şÎñÆ÷×îĞÂÁĞ±í";
+winform.text = "aardioæ‰©å±•åº“ï¼ˆæ”¶é›†ç‰ˆï¼‰ - å·²è·å–æœåŠ¡å™¨æœ€æ–°åˆ—è¡¨";
 winform.btnSetup.oncommand = function(id, event) {
     winform.btnSetup.disabled = true;
     
@@ -154,7 +154,7 @@ winform.btnSetup.oncommand = function(id, event) {
             var installVersion = installedLibs[libName][["version"]];
             
             if (installVersion != libVersion) {
-                winform.text = "aardioÀ©Õ¹¿â°²×°³ÌĞò ÕıÔÚ°²×°À©Õ¹¿â:" + libName;
+                winform.text = "aardioæ‰©å±•åº“å®‰è£…ç¨‹åº æ­£åœ¨å®‰è£…æ‰©å±•åº“:" + libName;
                 win.invoke(function(libName, lnk) {
                     /*idex{{*/
                     namespace idex {
@@ -171,7 +171,7 @@ winform.btnSetup.oncommand = function(id, event) {
                         };
                         
                         requestLibInfo = function(libName) {
-                            if (!libName) error("ÇëÖ¸¶¨¿âÃû³Æ²ÎÊı", 2);
+                            if (!libName) error("è¯·æŒ‡å®šåº“åç§°å‚æ•°", 2);
                             return win.invoke(function(libName, lnk) {
                                 import inet.http;
                                 var http = inet.http();
@@ -190,7 +190,7 @@ winform.btnSetup.oncommand = function(id, event) {
                         var hasBeenEntered = {};
                         importFile = function(libName, askTitle, installOnly) {
                             if (hasBeenEntered[libName]) {
-                                error('µ¼Èë¿âÊ§°Ü,Î´ÕÒµ½¿âÎÄ¼ş\n¿âÂ·¾¶:' + libName, 3);
+                                error('å¯¼å…¥åº“å¤±è´¥,æœªæ‰¾åˆ°åº“æ–‡ä»¶\nåº“è·¯å¾„:' + libName, 3);
                             }
                             hasBeenEntered[libName] = true;
                             
@@ -198,7 +198,7 @@ winform.btnSetup.oncommand = function(id, event) {
                             var updateInfo = requestLibInfo(libName);
                             if (!(updateInfo)) {
                                 if (!installOnly) {
-                                    error('µ¼Èë¿âÊ§°Ü,Î´ÕÒµ½¿âÎÄ¼ş\n¿âÂ·¾¶:' + libName, 3);
+                                    error('å¯¼å…¥åº“å¤±è´¥,æœªæ‰¾åˆ°åº“æ–‡ä»¶\nåº“è·¯å¾„:' + libName, 3);
                                 }
                                 hasBeenEntered[libName] = false;
                                 return false;
@@ -218,7 +218,7 @@ winform.btnSetup.oncommand = function(id, event) {
                             
                             downloadVersion = updateInfo.version;
                             if (!askTitle)
-                                askTitle = libName + " À©Õ¹¿âÉĞÎ´°²×°,ÄúĞèÒªÏÂÔØ°²×° " + libName + " À©Õ¹¿âÂğ?";
+                                askTitle = libName + " æ‰©å±•åº“å°šæœªå®‰è£…,æ‚¨éœ€è¦ä¸‹è½½å®‰è£… " + libName + " æ‰©å±•åº“å—?";
                             
                             if ((!#askTitle) || win.msgboxTest(askTitle, "aardio")) {
                                 
@@ -226,7 +226,7 @@ winform.btnSetup.oncommand = function(id, event) {
                                 mutex.wait(); {
                                     
                                     if (..string.endWith(downloadUrl, ".tar.lzma", true)) {
-                                        var ok = download(downloadUrl, "aardio- ÏÂÔØ " + libName + " À©Õ¹¿â", "~/download/lib/", , downloadLibName + ".tar.lzma");
+                                        var ok = download(downloadUrl, "aardio- ä¸‹è½½ " + libName + " æ‰©å±•åº“", "~/download/lib/", , downloadLibName + ".tar.lzma");
                                         if (ok) {
                                             if (downloadVersion && ..io.libpath(libName)) {
                                                 var libVers = getExtLibs();
@@ -246,13 +246,13 @@ winform.btnSetup.oncommand = function(id, event) {
                                             ..string.save(libPath, bin)
                                         }
                                         
-                                        var msg = "°²×°Ê§°Ü";
+                                        var msg = "å®‰è£…å¤±è´¥";
                                         if (..io.libpath(libName)) {
-                                            msg = " ÒÑ°²×°³É¹¦";
+                                            msg = " å·²å®‰è£…æˆåŠŸ";
                                         }
                                         
                                         if (installOnly) {
-                                            win.msgboxTimeout("¿â " + libName++msg, "aardio");
+                                            win.msgboxTimeout("åº“ " + libName++msg, "aardio");
                                         }
                                     }
                                 }
@@ -271,14 +271,14 @@ winform.btnSetup.oncommand = function(id, event) {
                             
                             hasBeenEntered[libName] = false;
                             if (!installOnly) {
-                                error('µ¼Èë¿âÊ§°Ü,Î´ÕÒµ½¿âÎÄ¼ş\n¿âÂ·¾¶: ' + libName, 3);
+                                error('å¯¼å…¥åº“å¤±è´¥,æœªæ‰¾åˆ°åº“æ–‡ä»¶\nåº“è·¯å¾„: ' + libName, 3);
                             }
                             return false;
                         }
-                        download = function(url, title = "ÏÂÔØ", saveDir, extraDir, saveName, parentForm) {
+                        download = function(url, title = "ä¸‹è½½", saveDir, extraDir, saveName, parentForm) {
                             var tUrl = ..inet.url.split(url);
                             if (!tUrl) {
-                                error("´íÎóµÄURL²ÎÊı", 2)
+                                error("é”™è¯¯çš„URLå‚æ•°", 2)
                             }
                             var tPath = ..io.splitpath(tUrl.path)
                             
@@ -305,7 +305,7 @@ winform.btnSetup.oncommand = function(id, event) {
                             downBox.preget = self.preget;
                             
                             downBox.endProc = function() {
-                                downBox.text = "ÕıÔÚ½âÑ¹Ëõ:" + saveName;
+                                downBox.text = "æ­£åœ¨è§£å‹ç¼©:" + saveName;
                                 ..win.peekPumpInputMessage();
                                 
                                 var tarTempName = pathCabinet + ".tar";
@@ -337,7 +337,7 @@ winform.btnSetup.oncommand = function(id, event) {
                                 downBox.onClose = function() {
                                     return false;
                                 }
-                                downBox.text = "ÕıÔÚÕ¹¿ª:" + saveName;
+                                downBox.text = "æ­£åœ¨å±•å¼€:" + saveName;
                                 var tarFile = ..fsys.untar(tarTempName, extraDir);
                                 tarFile.onProgressFile = function(path) {
                                     downBox.labInfo.text = path;
@@ -405,37 +405,37 @@ winform.btnSetup.oncommand = function(id, event) {
                 if (..win.isClosed()) return;
                 
                 installedLibs = ide.getExtLibs();
-                winform.listview.setItemText(installedLibs[libName][["version"]]: "°²×°Ê§°Ü", i, 3);
+                winform.listview.setItemText(installedLibs[libName][["version"]]: "å®‰è£…å¤±è´¥", i, 3);
                 if (installedLibs[libName][["version"]] == libVersion) {
-                    winform.text = "aardioÀ©Õ¹¿â°²×°³ÌĞò ÒÑ°²×°À©Õ¹¿â:" + libName;
+                    winform.text = "aardioæ‰©å±•åº“å®‰è£…ç¨‹åº å·²å®‰è£…æ‰©å±•åº“:" + libName;
                     winform.listview.setItemText(getCount(libName, , 1), i, 6);
                     
                 }
                 else {
-                    winform.text = "aardioÀ©Õ¹¿â°²×°³ÌĞò À©Õ¹¿â:" + libName + " °²×°Ê§°Ü!";
+                    winform.text = "aardioæ‰©å±•åº“å®‰è£…ç¨‹åº æ‰©å±•åº“:" + libName + " å®‰è£…å¤±è´¥!";
                 }
                 
             }
             else {
-                winform.text = "aardioÀ©Õ¹¿â°²×°³ÌĞò ºöÂÔÒÑ°²×°À©Õ¹¿â:" + libName;
+                winform.text = "aardioæ‰©å±•åº“å®‰è£…ç¨‹åº å¿½ç•¥å·²å®‰è£…æ‰©å±•åº“:" + libName;
             }
             
         }
     }
     
-    winform.text = "aardioÀ©Õ¹¿â°²×°³ÌĞò °²×°ÒÑÍê³É";
+    winform.text = "aardioæ‰©å±•åº“å®‰è£…ç¨‹åº å®‰è£…å·²å®Œæˆ";
     ide.refreshStdLib();
     winform.btnSetup.disabled = false;
 }
 
-//È¡ÏûÈ«Ñ¡
+//å–æ¶ˆå…¨é€‰
 winform.btnDeselectAll.oncommand = function(id, event) {
     for (i = winform.listview.count; 1; - 1) {
         winform.listview.setChecked(i, false)
     }
 }
 
-//È«Ñ¡
+//å…¨é€‰
 winform.btnSelectAll.oncommand = function(id, event) {
     for (i = winform.listview.count; 1; - 1) {
         winform.listview.setChecked(i, true)
@@ -451,7 +451,7 @@ fsys.createDir("/.sampleCode/");
 winform.listview.onnotify = function(id, code, ptr) {
     
     select (code) {
-        //×Ô»æ
+        //è‡ªç»˜
         case 0xFFFFFFF4 /*_NM_CUSTOMDRAW*/ {
             var lvcd = winform.listview.getNotifyCustomDraw(code, ptr);
             if (lvcd.nmcd.dwDrawStage == 0x10001 /*_CDDS_ITEMPREPAINT*/ )
@@ -460,7 +460,7 @@ winform.listview.onnotify = function(id, code, ptr) {
                 return 0x20 /*_CDRF_NOTIFYITEMDRAW*/ ;
             }
             elseif(lvcd.nmcd.dwDrawStage == (0x10001 /*_CDDS_ITEMPREPAINT*/ | 0x20000 /*_CDDS_SUBITEM*/ )) {
-                //×¢ÒâÕâÀï iSubItem µÄË÷Òı×Ô0¿ªÊ¼( ÆäËûº¯ÊıÍ¨³£×Ô1¿ªÊ¼ )
+                //æ³¨æ„è¿™é‡Œ iSubItem çš„ç´¢å¼•è‡ª0å¼€å§‹( å…¶ä»–å‡½æ•°é€šå¸¸è‡ª1å¼€å§‹ )
                 //lvcd.clrText = lvcd.iSubItem % 2 ? gdi.RGB(255,255,255) : gdi.RGB(12,255,120);
                 lvcd.clrTextBk = lvcd.nmcd.dwItemSpec % 2 ? gdi.RGB(168, 199, 255) : gdi.RGB(164, 237, 197);
                 
@@ -505,7 +505,7 @@ winform.listview.onnotify = function(id, code, ptr) {
                     }
                 }
                 else {
-                    winform.lbInfo.text = "±§Ç¸,ÔİÊ±Ã»ÓĞÕÒµ½Óë " + libName + "À©Õ¹¿âÓĞ¹ØµÄ·¶Àı"
+                    winform.lbInfo.text = "æŠ±æ­‰,æš‚æ—¶æ²¡æœ‰æ‰¾åˆ°ä¸ " + libName + "æ‰©å±•åº“æœ‰å…³çš„èŒƒä¾‹"
                     ..process.execute("http://api.aardio.com/v10/pages/search?q=" + libName);
                     return;
                 };
@@ -585,7 +585,7 @@ winform.button2.oncommand = function(id, event) {
     }
     winform.button2.disabled = false;
 }
-winform.static2.text = string.concat("Æô¶¯´ÎÊı£º", getCount("total", , 1))
+winform.static2.text = string.concat("å¯åŠ¨æ¬¡æ•°ï¼š", getCount("total", , 1))
 
 
 winform.combobox.onListChange = function() {
@@ -597,7 +597,6 @@ winform.combobox.onListChange = function() {
         lnk.res = giteeurl
     }
 }
-
 
 winform.editKeyword.setFocus();
 win.loopMessage();
