@@ -25,13 +25,11 @@ import ide;
 //import console;
 
 downtab={
-	默认 ="https://aardio.gogu.top/";
 	Gitee下载 = "https://gitee.com/yang_lite/aardio-extension-library/raw/main/"; //gitee服务器
     备用服务器下载 = "https://aarlib.52hy.top/aardio-extension-library/"; //自己服务器
 }
 lnk = {
-    //list = "https://aardio.gogu.top/list"; 
-    list ="https://gitee.com/yang_lite/aardio-extension-library/raw/main/list";//引用
+    list ="https://gitee.com/yang_lite/aardio-extension-library/raw/main/list";
 }
 var atom, hwnd = winform.atom("aardio.extlib.54AE3DC1-DC89-439C-8BFC-52576EA86CB8");
 if (!atom) {
@@ -52,11 +50,10 @@ getCount = function(key, n, g) {
 }
 
 winform.combobox.items = {
-	"默认";
     "Gitee下载";
     "备用服务器下载"
 }
-winform.combobox.selIndex = 2;
+winform.combobox.selIndex = 1;
 lnk.res=downtab[winform.combobox.selText]
 
 winform.enableDpiScaling();
