@@ -598,6 +598,5 @@ winform.combobox.onListChange = function() {
     }
 }
 
-
 winform.editKeyword.setFocus();
 win.loopMessage();
