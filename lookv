@@ -1,0 +1,44 @@
+import win.ui;
+/*DSG{{*/
+var winform = win.form(text="aardio form";right=759;bottom=469)
+winform.add()
+/*}}*/
+
+
+import web.form;
+import inet.http;
+wb=web.form(winform)
+var tab=eval(inet.http.get("https://gitee.com/yang_lite/aardio-extension-library/raw/main/list"));
+var back=eval(inet.http.get("https://aardio.gogu.top/list"));
+var htm="";
+import console
+
+for(k,v in tab){
+	var bkvs;
+	//console.log(k,type(back[k]))
+	if (!back[k] : !back[k].version) bkvs="无" else bkvs=back[k].version;
+	htm+="<tr><td>"+v.libName+"</td><td>"+v.description+"</td><td>"+v.author+"</td><td>"+v.version+"</td><td>"+bkvs+"</td></tr>"
+}
+
+
+
+
+wb.html = `
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+    <table style="text-align: left;margin:auto;b" border="1" cellspacing="0">
+    <tr><th>扩展库名称</th><th>说明</th><th>作者</th><th>当前版本</th><th>备份版本</th></tr>`
+	+ htm+
+    `</table>
+</body>
+</html>
+`
+
+
+
+winform.show();
+win.loopMessage();
