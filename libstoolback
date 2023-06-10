@@ -27,7 +27,7 @@ import ide;
 downtab={
 	默认 ="https://aardio.gogu.top/";
     备用 = "https://aarlib.52hy.top/aardio-extension-library/"; 
-    失效 = "http://aar.gogu.top";
+    失效 = "http://aar.gogu.top/";
 }
 
 var atom, hwnd = winform.atom("aardio.extlib.54AE3DC1-DC89-439C-8BFC-52576EA86CB8");
