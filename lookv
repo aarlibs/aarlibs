@@ -8,7 +8,7 @@ winform.add()
 import web.form;
 import inet.http;
 wb=web.form(winform)
-var tab=eval(inet.http.get("https://gitee.com/yang_lite/aardio-extension-library/raw/main/list"));
+var tab=eval(inet.http.get("http://aar.gogu.top/list"));
 var back=eval(inet.http.get("https://aardio.gogu.top/list"));
 var htm="";
 import console
