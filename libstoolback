@@ -111,8 +111,9 @@ winform.show()
 winform.text = "aardio扩展库安装程序 正在获取服务器列表...."
 http = inet.http()
 http.disableCache()
+libs ="";
 showLibs = function() {
-	var libs = eval(http.get(lnk.list): "");
+libs = eval(http.get(lnk.list): "");
     winform.listview.clear();
     winform.listview.redraw();
     if (libs) {
