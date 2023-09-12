@@ -1,0 +1,75 @@
+import fonts.fontAwesome;
+import win.ui;
+/*DSG{{*/
+var winform = win.form(text="库文件批量下载";right=459;bottom=194;bgcolor=16777215;border="dialog frame";max=false)
+winform.add(
+btnOpen={cls="plus";text='\uF115';left=408;top=74;right=443;bottom=99;dr=1;dt=1;font=LOGFONT(h=-16;name='FontAwesome');notify=1;z=2};
+button={cls="button";text="下载";left=300;top=125;right=396;bottom=167;z=6};
+combobox={cls="combobox";left=76;top=132;right=220;bottom=155;edge=1;items={};mode="dropdown";z=7};
+editDocumentRoot={cls="plus";left=98;top=73;right=397;bottom=97;align="left";border={bottom=1;color=-8355712};disabled=1;dl=1;dr=1;dt=1;editable=1;font=LOGFONT(h=-16);z=3};
+editHost={cls="plus";text="http://aar.gogu.top";left=100;top=26;right=420;bottom=50;align="left";border={bottom=1;color=-8355712};dl=1;dr=1;dt=1;editable=1;font=LOGFONT(h=-16);z=5};
+plus={cls="plus";text="主机地址：";left=10;top=32;right=100;bottom=56;align="right";dr=1;dt=1;font=LOGFONT(h=-15);transparent=1;z=4};
+static2={cls="plus";text="保存目录：";left=5;top=78;right=102;bottom=102;align="right";dl=1;dt=1;font=LOGFONT(h=-15);transparent=1;z=1}
+)
+/*}}*/
+
+winform.btnOpen.skin( {
+	background={
+		default=0;
+		hover=0xFF928BB3;
+		disabled=0xFFCCCCCC; 
+	}
+})
+
+
+import fsys.dlg.dir;
+winform.btnOpen.oncommand = function(id,event){
+	var dir = fsys.dlg.dir(winform.editDocumentRoot.text,winform)
+	if(dir){
+		winform.editDocumentRoot.text = dir;
+	}
+}
+winform.combobox.items={"---选择下载---","库文件","示例文件"};
+winform.combobox.selIndex=1;
+
+
+import console
+down=function(url,p,tit,host){
+	var downBox = inet.downBox(winform,tit,true)
+	var pt=string.replace(url,"@"+host,p);
+	var ok = downBox.test(url,pt) 
+	if( ok ){
+		winform.msgbox("文件已下载完成、服务器未更新,无需重新下载!")
+		return; 
+	}
+	elseif( ok === null ){
+		winform.msgboxErr("下载错误,HTTP错误代码:"+ ( downBox.statusCode : ""));
+		return; 
+	}
+	downBox.download(url, pt)
+}
+
+
+import inet.http;
+import inet.downBox;
+winform.button.oncommand = function(id,event){
+	if winform.editDocumentRoot.text="" return winform.msgbox("请先选择保存目录！");
+	 var url=inet.http.get(winform.editHost.text+"/list");
+	 if !url return winform.msgbox("请填有效主机再试！");
+	 url=eval(url);
+	 for(k,v in url){
+	 	var lzma=winform.editHost.text+"/lzma/" + v.libName + ".tar.lzma";
+	 	var cod=v.codeUrl?(winform.editHost.text+ "/sampleCode/" + v.libName):null;
+	 	var zip=v.zipUrl?(winform.editHost.text+ "/sampleCode/" + v.libName + ".zip"):null;
+	 	var emp=cod?cod:zip;
+	 	var sel=winform.combobox.selText;
+	 	if sel=="库文件" emp=null;
+	 	if sel=="示例文件" lzma=null;
+	 	if lzma down(lzma,winform.editDocumentRoot.text,v.libName,winform.editHost.text);
+	 	if emp down(emp,winform.editDocumentRoot.text,v.libName,winform.editHost.text);
+	 } 
+}
+
+
+winform.show(); 
+win.loopMessage();
